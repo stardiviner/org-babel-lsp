@@ -1,0 +1,7 @@
+* About
+
+This extension is archived and closed now.
+
+Because lsp-mode has officially support for org-mode now.
+
+https://github.com/emacs-lsp/lsp-mode/blob/master/docs/page/lsp-org.md
