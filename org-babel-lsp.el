@@ -1,6 +1,6 @@
 ;;; org-babel-lsp.el --- Support lsp-mode in Org Mode Babel -*- lexical-binding: t; -*-
 
-;;; Time-stamp: <2020-06-08 09:41:40 stardiviner>
+;;; Time-stamp: <2020-06-09 09:11:34 stardiviner>
 
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "25") (cl-lib "0.5"))
@@ -84,7 +84,7 @@
            (file-relative-name
             (read-file-name-default "Path to file: ")))))
 
-(advice-add 'org-edit-src-code :before #'org-babel-lsp-add-file-header-arg)
+;; (advice-add 'org-edit-src-code :before #'org-babel-lsp-add-file-header-arg)
 
 (define-key org-babel-map (kbd "M-f") 'org-babel-lsp-add-file-header-arg)
 
