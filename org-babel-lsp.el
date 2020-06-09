@@ -1,6 +1,6 @@
 ;;; org-babel-lsp.el --- Support lsp-mode in Org Mode Babel -*- lexical-binding: t; -*-
 
-;;; Time-stamp: <2020-06-08 09:31:49 stardiviner>
+;;; Time-stamp: <2020-06-08 09:41:40 stardiviner>
 
 ;; Authors: stardiviner <numbchild@gmail.com>
 ;; Package-Requires: ((emacs "25") (cl-lib "0.5"))
@@ -66,7 +66,14 @@
   :group 'org-babel)
 
 ;;; FIXME
-(dolist (land org-babel-lsp-lang-list)
+(dolist (land org-babel-lsp-lang-list
+              ;; (or (seq-intersection
+              ;;      (mapcar 'car org-babel-load-languages)
+              ;;      (delete nil
+              ;;              (mapcar (lambda (client) (lsp--client-language-id client))
+              ;;                      (ht-values lsp-clients))))
+              ;;     org-babel-lsp-lang-list)
+              )
   (eval `(lsp-org-babel-enbale ,lang)))
 
 (defun org-babel-lsp-add-file-header-arg ()
